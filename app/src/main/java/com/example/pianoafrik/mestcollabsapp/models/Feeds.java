@@ -1,4 +1,4 @@
-package com.example.pianoafrik.mestcollabsapp;
+package com.example.pianoafrik.mestcollabsapp.models;
 
 public class Feeds {
 
