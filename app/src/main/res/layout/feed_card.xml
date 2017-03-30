@@ -17,7 +17,7 @@
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:id="@+id/topArea"
             android:gravity="center_vertical"
@@ -28,6 +28,7 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:layout_width="50dp"
+                android:layout_alignParentLeft="true"
                 android:id="@+id/profilePic"
                 android:src="@drawable/profie"
                 android:layout_height="50dp" />
@@ -35,6 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:orientation="vertical"
+                android:layout_toRightOf="@+id/profilePic"
+                android:layout_centerVertical="true"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -53,9 +56,16 @@
                     android:textColor="@color/secondary_text"
                     android:layout_height="wrap_content" />
             </LinearLayout>
+            <ImageView
+                android:layout_width="30dp"
+                android:id="@+id/imgstar"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@mipmap/starpower"
+                android:layout_height="30dp" />
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
         <TextView
@@ -71,33 +81,28 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:id="@+id/reactionArea"
+            android:layout_marginTop="6dp"
 
             android:layout_below="@+id/txtPostContent"
             android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:src="@mipmap/ic_like"
-                    android:layout_height="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Likes"
-                    android:layout_marginLeft="2dp"
-                    android:textColor="@color/black"
+                    android:text="Feedback: 12"
+                    android:id="@+id/feedbacknums"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+
                     android:layout_height="wrap_content" />
 
-            </LinearLayout>
+
+
+
+
             <TextView
                 android:layout_width="wrap_content"
-                android:text="12 Comments"
+                android:text="Shares: 0"
+                android:id="@+id/sharenums"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_height="wrap_content" />
@@ -110,46 +115,26 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:layout_below="@+id/reactionArea"
             android:id="@+id/vDivider"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="6dp"
             android:background="@color/secondary_text"
             android:layout_height="1dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_below="@+id/vDivider"
             android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_marginBottom="5dp"
+            android:weightSum="2"
+            android:layout_marginBottom="2dp"
             android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/btnLike"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:src="@mipmap/like_black"
-                    android:layout_height="30dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="Like"
-                    android:layout_marginLeft="2dp"
-                    android:textColor="@color/black"
-                    android:layout_height="wrap_content" />
-
-
-            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:id="@+id/btnComment"
                 android:orientation="horizontal"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:layout_width="30dp"
@@ -158,34 +143,39 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Comment"
+                    android:text="Feedback"
                     android:layout_marginLeft="2dp"
                     android:textColor="@color/black"
                     android:layout_height="wrap_content" />
 
 
             </LinearLayout>
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:orientation="horizontal"
-                android:gravity="center"
+
+
+
                 android:id="@+id/btnShare"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:layout_width="30dp"
-                    android:src="@mipmap/ic_share"
+                    android:layout_toLeftOf="@+id/txtShare"
+                    android:src="@mipmap/share_black"
                     android:layout_height="30dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:text="Share"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/txtShare"
+                    android:layout_alignParentRight="true"
                     android:layout_marginLeft="2dp"
                     android:textColor="@color/black"
                     android:layout_height="wrap_content" />
 
 
-            </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
 
 
