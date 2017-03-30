@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnCard"
+
+
+
+    card_view:cardCornerRadius="2dp"
+
+    card_view:cardElevation="3dp">
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/topArea"
+            android:gravity="center_vertical"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:id="@+id/profilePic"
+                android:src="@drawable/profie"
+                android:layout_height="50dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Kelvin Wachira"
+                    android:id="@+id/txtName"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Mar 21 at 9:40pm . Accra, Ghana"
+                    android:id="@+id/postDate"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/secondary_text"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/txtPostContent"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:text="My first Facebook Post. Its A FacebookClone.Check it out."
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/topArea"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/reactionArea"
+
+            android:layout_below="@+id/txtPostContent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@mipmap/ic_like"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Likes"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="12 Comments"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/reactionArea"
+            android:id="@+id/vDivider"
+            android:layout_marginBottom="10dp"
+            android:background="@color/secondary_text"
+            android:layout_height="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/vDivider"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btnLike"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@mipmap/like_black"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Like"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/btnComment"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@mipmap/comments"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Comment"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:id="@+id/btnShare"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:src="@mipmap/ic_share"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Share"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
