@@ -6,5 +6,11 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="secondary_text">#D0D0D0</color>
+    <color name="darkBlue">#34495E</color>
+    <color name="textBlack">#333333</color>
+
+    <color name="linkBlue">#3498db</color>
+
+
 
 </resources>
