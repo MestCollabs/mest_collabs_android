@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnCard"
+
+
+
+    card_view:cardCornerRadius="2dp"
+
+    card_view:cardElevation="3dp">
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:scaleType="fitStart"
+                android:id="@+id/logoPic"
+                android:src="@drawable/asoriba"
+                android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Asoriba"
+                    android:layout_marginTop="5dp"
+                    android:textSize="25dp"
+                    android:id="@+id/txtCname"
+                    android:textColor="@color/darkBlue"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="@string/description"
+                    android:id="@+id/txtDescription"
+                    android:layout_marginTop="4dp"
+
+                    android:textColor="@color/textBlack"
+                    android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="30dp"
+                android:id="@+id/imgEmail"
+
+                android:src="@mipmap/email"
+                android:layout_height="30dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtEmail"
+                android:layout_gravity="center_vertical"
+                android:textSize="16dp"
+                android:textColor="@color/linkBlue"
+                android:text="nana@asoriba.com"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="30dp"
+                android:id="@+id/imgWebsite"
+
+                android:src="@mipmap/web"
+                android:layout_height="30dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtWebsite"
+                android:layout_gravity="center_vertical"
+                android:textSize="16dp"
+                android:textColor="@color/linkBlue"
+                android:text="www.asoriba.com"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_below="@+id/reactionArea"
+            android:id="@+id/vDivider"
+            android:layout_marginBottom="6dp"
+            android:background="@color/secondary_text"
+            android:layout_height="1dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="35dp"
+                android:id="@+id/imgAngel"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="8dp"
+
+                android:src="@mipmap/angellist"
+                android:layout_height="35dp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:id="@+id/imgCrunchbase"
+                android:layout_toRightOf="@+id/imgAngel"
+
+                android:src="@mipmap/crunchbase"
+                android:layout_height="35dp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_toRightOf="@+id/imgCrunchbase"
+                android:id="@+id/imgFacebook"
+                android:layout_marginRight="8dp"
+
+                android:src="@mipmap/facebook"
+                android:layout_height="35dp" />
+            <ImageView
+                android:layout_width="35dp"
+                android:id="@+id/imgTwitter"
+                android:layout_toRightOf="@+id/imgFacebook"
+                android:layout_marginRight="8dp"
+
+                android:src="@mipmap/twitter"
+                android:layout_height="35dp" />
+            <ImageView
+                android:layout_width="35dp"
+                android:id="@+id/imgLinkedin"
+                android:layout_toRightOf="@+id/imgTwitter"
+                android:layout_marginRight="8dp"
+
+                android:src="@mipmap/linkedin"
+                android:layout_height="35dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="View History"
+                android:layout_centerVertical="true"
+                android:id="@+id/txtHistory"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,24 +1,20 @@
-package com.example.pianoafrik.mestcollabsapp;
+package com.example.pianoafrik.mestcollabsapp.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 
+import com.example.pianoafrik.mestcollabsapp.utilities.Globall;
+import com.example.pianoafrik.mestcollabsapp.R;
 import com.example.pianoafrik.mestcollabsapp.adapters.FeedsAdapter;
 import com.example.pianoafrik.mestcollabsapp.models.Feeds;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FeedsFragment extends Fragment {
     private ListView listView;

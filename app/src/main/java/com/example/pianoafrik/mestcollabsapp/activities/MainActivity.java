@@ -1,6 +1,5 @@
-package com.example.pianoafrik.mestcollabsapp;
+package com.example.pianoafrik.mestcollabsapp.activities;
 
-import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,17 +9,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
-import android.view.ViewGroup;
-
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
+import com.example.pianoafrik.mestcollabsapp.R;
+import com.example.pianoafrik.mestcollabsapp.fragments.CompanyFragment;
+import com.example.pianoafrik.mestcollabsapp.fragments.FeedsFragment;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
@@ -115,7 +111,8 @@ public class MainActivity extends AppCompatActivity  {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new FeedsFragment(),"");
         adapter.addFrag(new FeedsFragment(), "");
-        adapter.addFrag(new FeedsFragment(), "");
+        adapter.addFrag(new CompanyFragment(), "");
+
         adapter.addFrag(new FeedsFragment(), "");
         adapter.addFrag(new FeedsFragment(), "");
 
