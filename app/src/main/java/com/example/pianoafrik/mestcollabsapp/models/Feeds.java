@@ -1,72 +1,73 @@
 package com.example.pianoafrik.mestcollabsapp.models;
 
+import java.util.ArrayList;
+
 public class Feeds {
 
-    public String imageUrl, feedText, datePosted, timePosted, numberOfLikes, numberOfComments, postedBy;
+    public String body, picture,time_ago;
+    public Mester mester;
+    public int id;
+    public ArrayList<Feedback> feedbacks;
+    public ArrayList<Shares> shares;
 
-    public Feeds(String imageUrl, String feedText, String datePosted, String timePosted, String numberOfLikes, String numberOfComments, String postedBy) {
-        this.imageUrl = imageUrl;
-        this.feedText = feedText;
-        this.datePosted = datePosted;
-        this.timePosted = timePosted;
-        this.numberOfLikes = numberOfLikes;
-        this.numberOfComments = numberOfComments;
-        this.postedBy=postedBy;
+
+    public Feeds(int id, String body, String picture, String time_ago, Mester mester, ArrayList<Feedback> feedbacks, ArrayList<Shares> shares) {
+        this.feedbacks=new ArrayList<Feedback>();
+        this.shares=new ArrayList<Shares>();
+        this.feedbacks=feedbacks;
+        this.shares=shares;
+        this.id=id;
+        this.body = body;
+        this.picture = picture;
+        this.time_ago = time_ago;
+        this.mester=new Mester(mester.id, mester.name, mester.email, mester.profilePicture);
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public Feeds(int id, String body, String picture, Mester mester, String time_ago) {
+        this.id=id;
+        this.body = body;
+        this.picture = picture;
+        this.time_ago = time_ago;
+        this.mester=new Mester(mester.id, mester.name, mester.email, mester.profilePicture);
     }
 
-    public String getFeedText() {
-        return feedText;
+    public String getBody() {
+        return body;
     }
 
-    public String getDatePosted() {
-        return datePosted;
+    public void setBody(String body) {
+        this.body = body;
     }
 
-    public String getTimePosted() {
-        return timePosted;
+    public String getPicture() {
+        return picture;
     }
 
-    public String getNumberOfLikes() {
-        return numberOfLikes;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
-    public String getNumberOfComments() {
-        return numberOfComments;
+    public String getTime_ago() {
+        return time_ago;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setTime_ago(String time_ago) {
+        this.time_ago = time_ago;
     }
 
-    public void setFeedText(String feedText) {
-        this.feedText = feedText;
+    public Mester getMester() {
+        return mester;
     }
 
-    public void setDatePosted(String datePosted) {
-        this.datePosted = datePosted;
+    public void setMester(Mester mester) {
+        this.mester = mester;
     }
 
-    public void setTimePosted(String timePosted) {
-        this.timePosted = timePosted;
+    public int getId() {
+        return id;
     }
 
-    public void setNumberOfLikes(String numberOfLikes) {
-        this.numberOfLikes = numberOfLikes;
-    }
-
-    public void setNumberOfComments(String numberOfComments) {
-        this.numberOfComments = numberOfComments;
-    }
-
-    public String getPostedBy() {
-        return postedBy;
-    }
-
-    public void setPostedBy(String postedBy) {
-        this.postedBy = postedBy;
+    public void setId(int id) {
+        this.id = id;
     }
 }

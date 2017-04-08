@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MestCollabs</string>
     <string name="title_activity_main">MestCollabs</string>
+    <string name="app_token">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfaWQiOjEsImV4cCI6MTUyMjYxMzk5Mn0.pzs5xyToFOtxx4sMkv9FN3NM8Kp3YrwEBk8aeXwOIUE</string>
+
     <string name="action_settings">Settings</string>
     <string name="description">Effective church administration and seamless member engagement\n\n
 Asoriba is a web and mobile application that enables effective church administration for leaders and seamless engagement with members</string>

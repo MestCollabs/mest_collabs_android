@@ -83,9 +83,9 @@ public class FeedsAdapter extends BaseAdapter {
 
 
 
-        viewHolder.txtName.setText(parkingList.get(position).getPostedBy());
-        viewHolder.postDetails.setText(parkingList.get(position).getDatePosted()+" at "+parkingList.get(position).getTimePosted());
-        viewHolder.postContent.setText(parkingList.get(position).getFeedText());
+        viewHolder.txtName.setText(parkingList.get(position).getMester().getName());
+        viewHolder.postDetails.setText("Posted "+parkingList.get(position).getTime_ago());
+        viewHolder.postContent.setText(parkingList.get(position).getBody());
 
 
         return rowView;

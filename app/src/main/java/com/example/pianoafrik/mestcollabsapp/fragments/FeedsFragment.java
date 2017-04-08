@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 
+import com.example.pianoafrik.mestcollabsapp.utilities.Fetch;
 import com.example.pianoafrik.mestcollabsapp.utilities.Globall;
 import com.example.pianoafrik.mestcollabsapp.R;
 import com.example.pianoafrik.mestcollabsapp.adapters.FeedsAdapter;
@@ -44,15 +45,13 @@ public class FeedsFragment extends Fragment {
 
         listView= (ListView)view.findViewById(R.id.listView);
         //Log.e("Confirm", "Confirmed>>>>"+Globall.sel_servicez.get(0));
-        Feeds newFeed= new Feeds("", "11:30 Coding. #MeltwaterLife.", "Mar 21", "9:40pm", "12", "10", "Charles Agyemang") ;
-        Feeds newFeeds= new Feeds("", "#ATS 2017 Coming to Nairobi. Let's cheer up fot the MESTERS", "Mar 21", "9:40pm", "12", "10", "Kelechi Udoagu") ;
-        Feeds newFeedss= new Feeds("", "Convolyzer - an online platform for creating smart conversational surveys, distribute via multiple channels and genarate analytics. #SurveyTools", "Mar 21", "9:40pm", "12", "10", "Kelechi Udoagu") ;
-        Globall.all_feeds.add(newFeed);
-        Globall.all_feeds.add(newFeeds);
-        Globall.all_feeds.add(newFeedss);
+        Fetch fetch = new Fetch(getActivity(), listView);
+        fetch.get_feeds();
 
 
-        myAppAdapter=new FeedsAdapter(Globall.all_feeds, getContext());
+
+
+
         listView.setAdapter(myAppAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
