@@ -5,12 +5,14 @@
 
     android:layout_width="match_parent"
 
+
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
     <ListView
         android:id="@+id/listView"
         android:background="@color/secondary_text"
         android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
         android:layout_height="match_parent">
 
     </ListView>

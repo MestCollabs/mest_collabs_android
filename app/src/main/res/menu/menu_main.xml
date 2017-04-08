@@ -6,6 +6,7 @@
         android:id="@+id/action_post"
 
         android:orderInCategory="100"
+        android:icon="@mipmap/post"
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item

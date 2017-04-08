@@ -67,23 +67,41 @@
 
         </RelativeLayout>
 
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:id="@+id/txtPostContent"
-            android:textSize="16dp"
-            android:textColor="@color/black"
-            android:text="My first Facebook Post. Its A FacebookClone.Check it out."
+            android:orientation="vertical"
+            android:id="@+id/contentArea"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_below="@+id/topArea"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/txtPostContent"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:text="My first Facebook Post. Its A FacebookClone.Check it out."
+
+                android:layout_below="@+id/topArea"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/imgPicture"
+                android:maxHeight="300dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:id="@+id/reactionArea"
             android:layout_marginTop="6dp"
 
-            android:layout_below="@+id/txtPostContent"
+            android:layout_below="@+id/contentArea"
             android:layout_height="wrap_content">
 
                 <TextView
