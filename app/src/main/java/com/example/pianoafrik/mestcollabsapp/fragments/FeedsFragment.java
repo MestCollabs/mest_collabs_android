@@ -2,6 +2,7 @@ package com.example.pianoafrik.mestcollabsapp.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,13 +45,8 @@ public class FeedsFragment extends Fragment {
         View view = inflater.inflate(R.layout.feeds_fragment, container, false);
 
         listView= (ListView)view.findViewById(R.id.listView);
-        //Log.e("Confirm", "Confirmed>>>>"+Globall.sel_servicez.get(0));
-        Fetch fetch = new Fetch(getActivity(), listView);
-        fetch.get_feeds();
 
-
-
-
+        myAppAdapter=new FeedsAdapter(Globall.all_feeds, getContext());
 
         listView.setAdapter(myAppAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()

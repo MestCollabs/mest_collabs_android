@@ -6,7 +6,7 @@ public class Feeds {
 
     public String body, picture,time_ago;
     public Mester mester;
-    public int id;
+    public int id, mester_id;
     public ArrayList<Feedback> feedbacks;
     public ArrayList<Shares> shares;
 
@@ -29,6 +29,12 @@ public class Feeds {
         this.picture = picture;
         this.time_ago = time_ago;
         this.mester=new Mester(mester.id, mester.name, mester.email, mester.profilePicture);
+    }
+
+    public Feeds( String body, String picture, int mester_id) {
+        this.mester_id=mester_id;
+        this.body = body;
+        this.picture = picture;
     }
 
     public String getBody() {
@@ -69,5 +75,13 @@ public class Feeds {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getMester_id() {
+        return mester_id;
+    }
+
+    public void setMester_id(int mester_id) {
+        this.mester_id = mester_id;
     }
 }

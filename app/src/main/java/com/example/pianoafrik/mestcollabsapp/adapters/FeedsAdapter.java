@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.pianoafrik.mestcollabsapp.R;
 import com.example.pianoafrik.mestcollabsapp.models.Feeds;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class FeedsAdapter extends BaseAdapter {
         LinearLayout btnShare, btnLike, btnComment;
 
         TextView txtName, postDetails, postContent, numberOfComments, numberOfLikes ;
-        ImageView profilePic,imgstar;
+        ImageView profilePic,imgstar, imgPicture;
 
 
     }
@@ -69,6 +70,7 @@ public class FeedsAdapter extends BaseAdapter {
             viewHolder.txtName = (TextView)rowView.findViewById(R.id.txtName);
             viewHolder.profilePic=(ImageView)rowView.findViewById(R.id.profilePic);
             viewHolder.imgstar=(ImageView)rowView.findViewById(R.id.imgstar);
+            viewHolder.imgPicture=(ImageView)rowView.findViewById(R.id.imgPicture);
             viewHolder.postDetails = (TextView)rowView.findViewById(R.id.postDate);
             viewHolder.postContent = (TextView)rowView.findViewById(R.id.txtPostContent);
 
@@ -86,6 +88,29 @@ public class FeedsAdapter extends BaseAdapter {
         viewHolder.txtName.setText(parkingList.get(position).getMester().getName());
         viewHolder.postDetails.setText("Posted "+parkingList.get(position).getTime_ago());
         viewHolder.postContent.setText(parkingList.get(position).getBody());
+        //Loading Image from URL
+        Picasso.with(context)
+                .load(parkingList.get(position).getMester().getProfilePicture())
+                .placeholder(R.drawable.profie)   // optional
+                .error(R.drawable.profie)      // optional
+                .resize(50,50)                        // optional
+                .into(viewHolder.profilePic);
+        if(parkingList.get(position).getPicture().equals("null"))
+        {
+            viewHolder.imgPicture.setVisibility(View.GONE);
+
+        }
+        else
+        {
+            Picasso.with(context)
+                    .load(parkingList.get(position).getPicture())
+                    .placeholder(R.drawable.profie)   // optional
+                    .error(R.drawable.profie)      // optional
+
+                    .into(viewHolder.imgPicture);
+
+        }
+
 
 
         return rowView;

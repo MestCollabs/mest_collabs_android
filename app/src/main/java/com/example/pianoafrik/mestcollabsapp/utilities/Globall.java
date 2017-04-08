@@ -14,6 +14,7 @@ import java.util.List;
 public class Globall {
 
     public static String GET_FEEDS_URL="https://mestapi-staging.herokuapp.com/api/v1/feeds";
+    public static String GET_TOKEN="https://mestapi-staging.herokuapp.com/authenticate";
     public static String APP_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBfaWQiOjEsImV4cCI6MTUyMjYxMzk5Mn0.pzs5xyToFOtxx4sMkv9FN3NM8Kp3YrwEBk8aeXwOIUE";
     public static List<Feeds> all_feeds = new ArrayList<Feeds>();
     public static List<Company> all_companies = new ArrayList<Company>();

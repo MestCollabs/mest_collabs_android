@@ -15,8 +15,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.pianoafrik.mestcollabsapp.R;
+import com.example.pianoafrik.mestcollabsapp.adapters.ViewPagerAdapter;
 import com.example.pianoafrik.mestcollabsapp.fragments.CompanyFragment;
 import com.example.pianoafrik.mestcollabsapp.fragments.FeedsFragment;
+import com.example.pianoafrik.mestcollabsapp.utilities.Fetch;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
@@ -26,9 +28,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
+    private Fetch fetch;
+
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    ViewPagerAdapter adapter;
     private Boolean isFabOpen = false;
     private FloatingActionButton fab_post,fab_surveys, fab_contacts;
     private int[] tabIcons = {
@@ -43,6 +48,8 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -90,11 +97,21 @@ public class MainActivity extends AppCompatActivity  {
 
 
         viewPager = (ViewPager) findViewById(R.id.container);
-        setupViewPager(viewPager);
+        //initAdapter();
+        //viewPager.setAdapter(adapter);
+
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
+        setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
+
+
+
+
+        fetch=new Fetch(this, viewPager , adapter);
+        fetch.get_feeds();
+
     }
 
 
@@ -110,41 +127,16 @@ public class MainActivity extends AppCompatActivity  {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new FeedsFragment(),"");
-        adapter.addFrag(new FeedsFragment(), "");
+        adapter.addFrag(new CompanyFragment(), "");
         adapter.addFrag(new CompanyFragment(), "");
 
         adapter.addFrag(new FeedsFragment(), "");
         adapter.addFrag(new FeedsFragment(), "");
 
+
         viewPager.setAdapter(adapter);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
 
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFrag(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
-        }
-    }
 }
